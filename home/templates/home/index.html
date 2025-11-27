@@ -120,8 +120,8 @@
                         <h2>{{ info.first.bio }}</h2>
 
                         <ul>
-                            <li><i class="fa fa-envelope"></i><a href="mailto:">{{ info.first.email }}</a></li>
-                            <li><i class="fa fa-phone"></i><a href="callto:">{{ info.first.phone }}</a></li>
+                            <li><i class="fa fa-envelope"></i><a href="mailto:{{ info.first.email }}">{{ info.first.email }}</a></li>
+                            <li><i class="fa fa-phone"></i><a href="callto:{{ info.first.phone }}">{{ info.first.phone }}</a></li>
                             <li><i class="fa fa-map-marker"></i>
                                 <address>{{ info.first.address }}</address>
                             </li>
@@ -298,7 +298,7 @@
 
 <!--
 ===================
-    EXPERIENCES
+    PORTFOLIO
 ===================
 -->
 <section class="mh-experince" id="mh-experience">
@@ -311,9 +311,23 @@
                         <div class="mh-education-deatils">
                             <!-- Education Institutes-->
                             <div class="mh-education-item dark-bg">
-                                <h4>دانشگاه آزاد،کار شناسی علوم ورزشی</h4>
-                                <div class="mh-eduyear">2019-2023</div>
+                                <h4> علوم ورزشی <a href=""> دانشگاه آزاد </a></h4>
+                                <div class="mh-eduyear">2020-2023</div>
                             </div>
+                            <!-- Education Institutes-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="mh-work">
+                        <h3>توانایی ها</h3>
+                        <div class="mh-experience-deatils">
+                            <!-- Education Institutes-->
+                            <div class="mh-work-item dark-bg">
+                                <h4> طراحی سایت <a href=""> دانشکده ی فنی حرفه ای </a></h4>
+                                <div class="mh-eduyear">2023-2025</div>
+                            </div>
+                            <!-- Education Institutes-->
                         </div>
                     </div>
                 </div>
@@ -339,75 +353,54 @@
                         <li data-filter="*" class="current"><span>همه دسته بندی ها</span></li>
                         <li data-filter=".user-interface"><span>طراحی وب سایت</span></li>
                         <li data-filter=".branding"><span>علائم تجاری</span></li>
-                        <li data-filter=".mockup"><span>ماکت ها</span></li>
                     </ul>
                 </div>
                 <div class="mh-project-gallery col-sm-12" id="project-gallery">
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
-                            <figure>
-                                <img src="{% static "images/portfolio/g5.png" %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">طراحی خلاقانه</h5>
-                                    <span class="sub-title">عکاسی</span>
-                                    <a href="{% static "images/portfolio/g5.png" %}" data-fancybox data-src="#mh"></a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface">
-                            <figure>
-                                <img src="{% static "images/portfolio/g4.png" %}" alt="img04">
-                                <figcaption class="fig-caption">
-                                    <i class="fa fa-search"></i>
-                                    <h5 class="title">طراحی خلاقانه</h5>
-                                    <span class="sub-title">عکاسی</span>
-                                    <a href="{% static "images/portfolio/g4.png" %}" data-fancybox data-src="#mh"></a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div> <!-- End: .grid .project-gallery -->
-                </div> <!-- End: .grid .project-gallery -->
-            </div> <!-- End: .part -->
-        </div> <!-- End: .row -->
-    </div>
-    <div class="mh-portfolio-modal" id="mh">
-        <div class="container">
-            <div class="row mh-portfolio-modal-inner">
-                <div class="col-sm-5">
-                    <h2>نام پروژه</h2>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                        مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد </p>
-
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
-                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                        مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد </p>
-
-                    <div class="mh-about-tag">
-                        <ul>
-                            <li><span>php</span></li>
-                            <li><span>html</span></li>
-                            <li><span>css</span></li>
-                            <li><span>php</span></li>
-                            <li><span>wordpress</span></li>
-                            <li><span>React</span></li>
-                            <li><span>Javascript</span></li>
-                        </ul>
-                    </div>
-                    <a href="" class="btn btn-fill">مشاهده</a>
-                </div>
-                <div class="col-sm-7">
-                    <div class="mh-portfolio-modal-img">
-                        <img src="{% static "images/pr-1.jif" %}" alt="" class="img-fluid">
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                            است </p>
+                    <div class="portfolioContainer row">
+                        {% for foo in Portfolio %}
+                            <div class="grid-item col-md-4 col-sm-6 col-xs-12 {{ foo.category }}">
+                                <figure>
+                                    <img src="{{ foo.image.url }}" alt="img04">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">{{ foo.title }}</h5>
+                                        <span class="sub-title">{{ foo.title }}</span>
+                                        <a href="#mh-{{ forloop.counter }}" data-fancybox
+                                           data-src="#mh-{{ forloop.counter }}"></a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
 
+    {% for foo in Portfolio %}
+        <div class="mh-portfolio-modal" id="mh-{{ forloop.counter }}">
+            <div class="container">
+                <div class="row mh-portfolio-modal-inner">
+                    <div class="col-sm-5">
+                        <h2>{{ foo.title }}</h2>
+                        <p>{{ foo.description }}</p>
+                        <div class="mh-about-tag">
+                            <ul>
+                                <li><span>python</span></li>
+                                <li><span>html</span></li>
+                                <li><span>css</span></li>
+                                <li><span>django</span></li>
+                                <li><span>wordpress</span></li>
+                                <li><span>React</span></li>
+                                <li><span>Javascript</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</section>
 <!--
 ===================
     PRICING
@@ -463,66 +456,6 @@
                             <li>نوشتن موسیقی</li>
                         </ul>
                         <a href="" class="btn btn-fill">من را استخدام کن</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--
-===================
-    BLOG
-===================
--->
-<section class="mh-blog" id="mh-blog">
-    <div class="container">
-        <div class="row section-separator">
-            <div class="col-sm-12 section-title">
-                <h3>پست های ویژه</h3>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="mh-blog-item dark-bg">
-                    <img src="{% static "images/b-1.png" %}" alt="" class="img-fluid">
-                    <div class="blog-inner">
-                        <h2><a href="">زندگی عاری از ترافیک روزانه</a></h2>
-                        <div class="mh-blog-post-info">
-                            <ul>
-                                <li><a href="">1400/07/01</a><strong>پست شده در</strong></li>
-                                <li><a href="">مدیر</a><strong>توسط</strong></li>
-                            </ul>
-                        </div>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                            است </p>
-                        <a href="">بیشتر بخوانید</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--
-===================
-   TESTIMONIAL
-===================
--->
-<section class="mh-testimonial" id="mh-testimonial">
-    <div class="home-v-img">
-        <div class="container">
-            <div class="row section-separator">
-                <div class="col-sm-12 section-title">
-                    <h3>نظرات مشتریان</h3>
-                </div>
-                <div class="col-sm-12" id="mh-client-review">
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="{% static "images/c-1.png" %}" alt="" class="img-fluid">
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                                است </p>
-                            <h4>نام مشتری</h4>
-                            <span>مدیر شرکت گوگل</span>
-                        </div>
                     </div>
                 </div>
             </div>

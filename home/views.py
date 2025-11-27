@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .models import Info,Services
+from .models import Info, Services, Portfolio
 
 
 class Home(TemplateView):
@@ -10,4 +10,5 @@ class Home(TemplateView):
         context = super(Home, self).get_context_data()
         context['info'] = Info.objects.all()
         context['service'] = Services.objects.all()
+        context['Portfolio'] = Portfolio.objects.all()
         return context
