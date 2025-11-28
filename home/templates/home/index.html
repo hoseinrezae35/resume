@@ -90,9 +90,6 @@
                             <a class="nav-link" href="#mh-pricing">قیمت ها</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#mh-blog">وبلاگ</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#mh-contact">تماس با من</a>
                         </li>
                     </ul>
@@ -120,8 +117,10 @@
                         <h2>{{ info.first.bio }}</h2>
 
                         <ul>
-                            <li><i class="fa fa-envelope"></i><a href="mailto:{{ info.first.email }}">{{ info.first.email }}</a></li>
-                            <li><i class="fa fa-phone"></i><a href="callto:{{ info.first.phone }}">{{ info.first.phone }}</a></li>
+                            <li><i class="fa fa-envelope"></i><a
+                                    href="mailto:{{ info.first.email }}">{{ info.first.email }}</a></li>
+                            <li><i class="fa fa-phone"></i><a
+                                    href="callto:{{ info.first.phone }}">{{ info.first.phone }}</a></li>
                             <li><i class="fa fa-map-marker"></i>
                                 <address>{{ info.first.address }}</address>
                             </li>
@@ -420,42 +419,12 @@
                         <p>تمام وقت در دسترس هستم</p>
                         <h5>$1500</h5>
                         <ul>
-                            <li>توسعه شبکه</li>
-                            <li>تبلیغات</li>
-                            <li>توسعه بازی</li>
-                            <li>نوشتن موسیقی</li>
+                            <li>توسعه سایت</li>
+                            <li>رفع باگ</li>
+                            <li> طراحی سایت</li>
+                            <li>طراحی و توسعه ی api</li>
                         </ul>
-                        <a href="" class="btn btn-fill">من را استخدام کن</a>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-pricing dark-bg shadow-2">
-                        <i class="fa fa-file"></i>
-                        <h4>پروژه قیمت ثابت</h4>
-                        <p>من برای نقشهای ثابت در دسترس هستم</p>
-                        <h5>$500</h5>
-                        <ul>
-                            <li>توسعه شبکه</li>
-                            <li>تبلیغات</li>
-                            <li>توسعه بازی</li>
-                            <li>نوشتن موسیقی</li>
-                        </ul>
-                        <a href="" class="btn btn-fill">من را استخدام کن</a>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-pricing dark-bg shadow-2">
-                        <i class="fa fa-hourglass"></i>
-                        <h4>کار ساعتی</h4>
-                        <p>من برای پروژه های ساعتی در دسترس هستم</p>
-                        <h5>$50</h5>
-                        <ul>
-                            <li>توسعه شبکه</li>
-                            <li>تبلیغات</li>
-                            <li>توسعه بازی</li>
-                            <li>نوشتن موسیقی</li>
-                        </ul>
-                        <a href="" class="btn btn-fill">من را استخدام کن</a>
+                        <a href="{{ info.first.telegram_id }}" target="_blank" class="btn btn-fill">تماس با من</a>
                     </div>
                 </div>
             </div>
@@ -485,8 +454,7 @@
                                 <div class="each-info">
                                     <h4>آدرس</h4>
                                     <address>
-                                        ایران <br>
-                                        مشهد
+                                        {{ info.first.address }}
                                     </address>
                                 </div>
                             </div>
@@ -498,45 +466,33 @@
                                 </div>
                                 <div class="each-info">
                                     <h4>ایمیل</h4>
-                                    <a href="mailto:yourmail@email.com">yourmail@email.com</a><br>
-                                    <a href="mailto:yourmail@email.com">yourmail@email.com</a>
+                                    <a href="mailto:{{ info.first.email }}">{{ info.first.email }}</a><br>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-4">
                             <div class="mh-address-footer-item dark-bg shadow-1">
                                 <div class="each-icon">
-                                    <i class="fa fa-phone"></i>
+                                    <i class="fa fa-location-arrow"></i>
                                 </div>
                                 <div class="each-info">
-                                    <h4>تلفن</h4>
-                                    <a href="callto:(880)-8976-987">(880)-8976-987</a><br>
-                                    <a href="callto:(880)-8976-987">(880)-8976-987</a>
+                                    <h3>تلگرام</h3>
+                                    <h5>روی ایدی کلیک کنید</h5>
+                                    <a href="{{ info.first.telegram_id }}" target="_blank"
+                                       class="contact-link telegram"> HR35O </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                    <form method="post">
+                        {% csrf_token %}
                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                         <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                <input name="name" class="contact-name form-control" id="name" type="text"
-                                       placeholder="نام کوچک" required>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
-                                <input name="name" class="contact-email form-control" id="L_name" type="text"
-                                       placeholder="نام مستعار" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <input name="name" class="contact-subject form-control" id="email" type="email"
-                                       placeholder="ایمیل شما" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <textarea class="contact-message" id="message" rows="6" placeholder="نامه شما"
-                                          required></textarea>
-                            </div>
+                            {{ form.name }}
+                            {{ form.email }}
+                            {{ form.text }}
                             <!-- Subject Button -->
                             <div class="btn-form col-sm-12">
                                 <button type="submit" class="btn btn-fill btn-block" id="form-submit">ارسال پیام
@@ -544,32 +500,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <div class="mh-map">
-                        <div class="shadow-1">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6431.4438072486855!2d59.623349872497435!3d36.29479706748643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f6c90dda59d8879%3A0x59ae87f644753467!2z2YbZiNi62KfZhtiMINit2LHZhSDZhdi32YfYsdiMINmF2LTZh9iv2Iwg2KfYs9iq2KfZhiDYrtix2KfYs9in2YYg2LHYttmI24zYjCDYp9uM2LHYp9mG!5e0!3m2!1sfa!2s!4v1632734242997!5m2!1sfa!2s"
-                                    width="600" height="450" style="border:0;" allowfullscreen=""
-                                    loading="lazy"></iframe>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 mh-copyright">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="text-right text-xs-center">
-                                <p>فارسی و راست چین توسط <a href="https://netcopy.ir">سایا شخصی</a></p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="social-icon">
-                                <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                <li><a href=""><i class="fa fa-github"></i></a></li>
-                                <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
